@@ -11,10 +11,14 @@ public class ApplicationManager {
         wd = new ChromeDriver();
         wd.navigate().to("https://telranedu.web.app/");
         helperUser = new HelperUser(wd);
+        helperContact = new HelperContact(wd);
     }
 
     public HelperUser getHelperUser() {
         return helperUser;
+    }
+    public HelperContact getHelperContact() {
+        return helperContact;
     }
 
     public void stop() {
