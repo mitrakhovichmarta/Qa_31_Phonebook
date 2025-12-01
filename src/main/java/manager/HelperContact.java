@@ -53,4 +53,34 @@ public class HelperContact extends HelperBase {
         return isElementPresent(By.cssSelector("a.active[href='/add']"));
     }
 
+    public boolean provideContacts() {
+        List<WebElement> list = wd.findElements(By.xpath("//div[@class='contact-page_contactspage__2TPwe']"));
+        return !list.isEmpty();
+    }
+
+    public void removeFirstContact() {
+        List<WebElement> contacts = wd.findElements(By.xpath("//div[@class='contact-page_leftdiv__yhyke']"));
+        WebElement firstContact = contacts.get(0);
+        firstContact.click();
+        buttonDelete();
+
+
+    }
+
+    public void buttonDelete() {
+        WebElement buttonDelete = wd.findElement(By.xpath("//button[normalize-space()='Remove']"));
+
+
+    }
+
+    public void removeAllContacts() {
+        List<WebElement> contacts = wd.findElements(By.xpath("//div[@class='contact-page_leftdiv__yhyke']"));
+
+        while (provideContacts()) {
+            removeFirstContact();
+        }
+
+    }
 }
+
+
