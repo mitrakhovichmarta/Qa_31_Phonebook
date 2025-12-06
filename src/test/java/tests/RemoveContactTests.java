@@ -14,7 +14,7 @@ public class RemoveContactTests extends TestBase {
                     .withPassword("Qwerty2025!"));
         }
 
-        
+
     }
 
 

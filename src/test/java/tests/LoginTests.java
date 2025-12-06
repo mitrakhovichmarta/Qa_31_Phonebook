@@ -20,6 +20,7 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginSuccess() {
+        logger.info("Start");
         app.getHelperUser().openLoginRegistrationForm();
         app.getHelperUser().fillLoginRegistrationForm("mitrakhovichmarta@gmail.com", "Qwerty2025!");
         app.getHelperUser().submitLogin();
@@ -27,6 +28,7 @@ public class LoginTests extends TestBase {
 
         //Assert
         Assert.assertTrue(app.getHelperUser().isLogged());
+        logger.info("End");
     }
 
     @Test
